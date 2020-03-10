@@ -30,7 +30,6 @@ y = [item.upper() for item in a]
 
 print(y)
 
-print(6 % 3)
 # Use a list comprehension to create a list containing only the _even_ elements
 # the user entered into list x.
 
