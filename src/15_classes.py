@@ -42,8 +42,7 @@ class Geocache(Waypoint):
 
 
 # YOUR CODE HERE
-latlon1 = LatLon(41.70505, -121.51521)
-waypoint = Waypoint(latlon1.lat, latlon1.lon, "Catacombs")
+waypoint = Waypoint("Catacombs", 41.70505, -121.51521)
 
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
@@ -52,8 +51,7 @@ print(waypoint)
 # Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
 
 # YOUR CODE HERE
-latlon2 = LatLon(44.052137, -121.41556)
-waypoint2 = Waypoint(latlon2.lat, latlon2.lon, "Newberry Views")
-geocache = Geocache(waypoint2.name, waypoint2.lat, waypoint2.lon, 1.5, 2)
+geocache = Geocache("Newberry Views", 44.052137, -121.41556, 1.5, 2)
+
 # Print it--also make this print more nicely
 print(geocache)
