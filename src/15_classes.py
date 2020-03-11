@@ -15,11 +15,10 @@ class LatLon:
 # YOUR CODE HERE
 
 
-class Waypoint:
-    def __init__(self, name, LatLon):
+class Waypoint(LatLon):
+    def __init__(self, name, lat, lon):
+        super().__init__(lat, lon)
         self.name = name
-        self.lat = LatLon.lat
-        self.lon = LatLon.lon
 
     def __str__(self):
         return f'Waypoint -> Name: {self.name}, Lat: {self.lat}, Lon: {self.lon}'
@@ -30,13 +29,11 @@ class Waypoint:
 # YOUR CODE HERE
 
 
-class Geocache:
-    def __init__(self, difficulty, size, Waypoint):
-        self.name = Waypoint.name
+class Geocache(Waypoint):
+    def __init__(self, name, lat, lon, difficulty, size):
+        super().__init__(name, lat, lon)
         self.difficulty = difficulty
         self.size = size
-        self.lat = Waypoint.lat
-        self.lon = Waypoint.lon
 
     def __str__(self):
         return f'Geocache -> Name: {self.name}, Lat: {self.lat}, Lon: {self.lon}, Difficulty: {self.difficulty}, Size: {self.size}'
@@ -46,7 +43,7 @@ class Geocache:
 
 # YOUR CODE HERE
 latlon1 = LatLon(41.70505, -121.51521)
-waypoint = Waypoint("Catacombs", latlon1)
+waypoint = Waypoint(latlon1.lat, latlon1.lon, "Catacombs")
 
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
@@ -56,7 +53,7 @@ print(waypoint)
 
 # YOUR CODE HERE
 latlon2 = LatLon(44.052137, -121.41556)
-waypoint2 = Waypoint("Newberry Views", latlon2)
-geocache = Geocache(1.5, 2, waypoint2)
+waypoint2 = Waypoint(latlon2.lat, latlon2.lon, "Newberry Views")
+geocache = Geocache(waypoint2.name, waypoint2.lat, waypoint2.lon, 1.5, 2)
 # Print it--also make this print more nicely
 print(geocache)
