@@ -1,0 +1,3 @@
+Lambda is great
+The students are fantastic
+Pair programming is fun!
